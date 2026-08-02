@@ -6,7 +6,7 @@ This repository models an Indian e-commerce data warehouse (**BharatCart**) trac
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 The objective of this project is to build and analyze an end-to-end relational schema from scratch:
 1. **Schema Design (`01_schema.sql`)**: 10 tables in 3NF with Primary Keys, Foreign Keys, `CHECK` constraints, and performance indexes.
@@ -25,7 +25,7 @@ The objective of this project is to build and analyze an end-to-end relational s
 
 ---
 
-## 🗺️ Database ER Diagram
+## Database ER Diagram
 
 ```mermaid
 erDiagram
@@ -42,7 +42,7 @@ erDiagram
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -59,7 +59,7 @@ erDiagram
 
 ---
 
-## 💡 Key SQL Queries Covered
+## Key SQL Queries Covered
 
 ### 1. Month-over-Month (MoM) Revenue Growth
 ```sql
@@ -113,7 +113,7 @@ FROM BaseRFM;
 
 ---
 
-## 🛠️ How to Run Locally
+## How to Run Locally
 
 ### Option 1: Live Interactive Browser Sandbox
 Open `index.html` directly in any web browser or start a simple HTTP server:
