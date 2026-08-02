@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BharatCart Analytics | E-Commerce Business Intelligence Portal</title>
-    <!-- Fonts -->
+    <title>BharatCart | Enterprise SQL Data Warehouse & Business Intelligence</title>
+    <!-- Google Typography (Cormorant Garamond + Inter + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Chart.js -->
+    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- SQL.js Engine -->
+    <!-- SQL.js WebAssembly Engine -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation (Editorial Surface Card) -->
         <aside class="sidebar">
             <div class="brand">
-                <div class="brand-icon"><i class="fa-solid fa-database"></i></div>
+                <div class="brand-icon-custom"><i class="fa-solid fa-database"></i></div>
                 <div class="brand-text">
                     <h2>BharatCart</h2>
-                    <p>Business Intelligence Portal</p>
                 </div>
+                <span class="badge-coral-mini">SQL WAREHOUSE</span>
             </div>
 
             <div class="nav-section">
-                <div class="section-label">SELECT ANALYTICAL REPORT</div>
+                <div class="section-title">Analytical Queries</div>
                 <ul class="query-nav">
                     <li class="nav-item active" data-query-id="1">
                         <i class="fa-solid fa-chart-line"></i>
                         <span>1. Revenue & MoM Growth</span>
                     </li>
                     <li class="nav-item" data-query-id="2">
-                        <i class="fa-solid fa-users"></i>
+                        <i class="fa-solid fa-users-viewfinder"></i>
                         <span>2. Customer RFM Segments</span>
                     </li>
                     <li class="nav-item" data-query-id="3">
-                        <i class="fa-solid fa-pie-chart"></i>
+                        <i class="fa-solid fa-chart-pie"></i>
                         <span>3. Pareto 80/20 Revenue</span>
                     </li>
                     <li class="nav-item" data-query-id="4">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <i class="fa-solid fa-wave-square"></i>
                         <span>4. Rolling 7-Day Trend</span>
                     </li>
                     <li class="nav-item" data-query-id="5">
-                        <i class="fa-solid fa-warehouse"></i>
+                        <i class="fa-solid fa-boxes-packing"></i>
                         <span>5. Inventory & Reorder Risk</span>
                     </li>
                     <li class="nav-item" data-query-id="6">
@@ -57,106 +57,108 @@
                         <span>6. Payment Gateway Health</span>
                     </li>
                     <li class="nav-item" data-query-id="7">
-                        <i class="fa-solid fa-building-flag"></i>
-                        <span>7. Metro City Sales ARPU</span>
+                        <i class="fa-solid fa-city"></i>
+                        <span>7. Metro City ARPU</span>
                     </li>
                 </ul>
             </div>
 
             <div class="sidebar-footer">
-                <div class="status-badge">
-                    <span class="status-dot"></span>
-                    <span>In-Browser Engine Active</span>
+                <div class="db-status">
+                    <span class="pulse-dot"></span>
+                    <span>In-Browser SQLite Active</span>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Main Content Area (Cream Canvas) -->
         <main class="main-content">
-            <!-- Top Bar -->
-            <header class="top-bar">
-                <div class="header-title">
-                    <h1>Data Warehouse Executive Dashboard</h1>
-                    <p>Real-time analytics and SQL query execution portal for Indian E-Commerce operations</p>
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>BharatCart Intelligence Suite</h1>
+                    <p>Enterprise Indian E-Commerce Data Warehouse & Analytics Engine</p>
                 </div>
-                <div class="header-actions">
-                    <a href="https://github.com" target="_blank" class="btn-secondary">
-                        <i class="fa-brands fa-github"></i> GitHub Code Repo
+                <div class="header-right">
+                    <a href="https://github.com" target="_blank" class="github-btn">
+                        <i class="fa-brands fa-github"></i> Repository
                     </a>
                 </div>
             </header>
 
-            <!-- Executive KPI Cards -->
+            <!-- Executive KPI Cards (Light Cream Surface Cards) -->
             <section class="kpi-grid">
                 <div class="kpi-card">
-                    <div class="kpi-header">
-                        <span class="kpi-title">Gross Revenue</span>
-                        <div class="kpi-icon blue"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                    <span class="kpi-label">Gross Revenue</span>
+                    <div class="kpi-details">
+                        <h3 id="kpi-revenue">₹16,42,437</h3>
                     </div>
-                    <div class="kpi-value" id="kpi-revenue">₹16,42,437</div>
-                    <span class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +24.2% MoM Growth</span>
+                    <span class="kpi-sub positive">↑ +24.2% MoM Growth</span>
                 </div>
 
                 <div class="kpi-card">
-                    <div class="kpi-header">
-                        <span class="kpi-title">Total Orders</span>
-                        <div class="kpi-icon green"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <span class="kpi-label">Completed Orders</span>
+                    <div class="kpi-details">
+                        <h3 id="kpi-orders">15 Orders</h3>
                     </div>
-                    <div class="kpi-value" id="kpi-orders">15 Orders</div>
-                    <span class="kpi-trend neutral"><i class="fa-solid fa-check"></i> 93.3% Fulfillment Rate</span>
+                    <span class="kpi-sub">93.3% Fulfillment SLA</span>
                 </div>
 
                 <div class="kpi-card">
-                    <div class="kpi-header">
-                        <span class="kpi-title">Active Metros</span>
-                        <div class="kpi-icon purple"><i class="fa-solid fa-location-dot"></i></div>
+                    <span class="kpi-label">Top Customer Metros</span>
+                    <div class="kpi-details">
+                        <h3 id="kpi-customers">10 Cities</h3>
                     </div>
-                    <div class="kpi-value" id="kpi-customers">10 Metros</div>
-                    <span class="kpi-trend up">Bengaluru, Mumbai, Delhi</span>
+                    <span class="kpi-sub positive">Bengaluru, BOM, DEL</span>
                 </div>
 
                 <div class="kpi-card">
-                    <div class="kpi-header">
-                        <span class="kpi-title">Reorder Alerts</span>
-                        <div class="kpi-icon amber"><i class="fa-solid fa-box-open"></i></div>
+                    <span class="kpi-label">Inventory Reorder Alerts</span>
+                    <div class="kpi-details">
+                        <h3 id="kpi-alerts">4 Products</h3>
                     </div>
-                    <div class="kpi-value" id="kpi-alerts">4 Products</div>
-                    <span class="kpi-trend neutral">FC Stockout Warning</span>
+                    <span class="kpi-sub">FC Replenishment Required</span>
                 </div>
             </section>
 
-            <!-- Human-Friendly Explanation Banner -->
+            <!-- Explanation Banner (Editorial Surface Card) -->
             <div class="explanation-card">
                 <div class="explanation-icon"><i class="fa-solid fa-lightbulb"></i></div>
                 <div class="explanation-content">
-                    <h3 id="report-title">Report 1: Executive Revenue & Month-over-Month Growth</h3>
-                    <p id="report-desc">This query analyzes monthly gross sales performance and calculates Month-over-Month (MoM) growth percentage using SQL Window Functions (`LAG()`). It helps executive management track revenue momentum across Indian market segments.</p>
+                    <h3 id="report-title">Report 1: Executive Revenue & Month-over-Month Growth (INR)</h3>
+                    <p id="report-desc">This query calculates total monthly revenue and Month-over-Month (MoM) growth percentage using the SQL LAG() window function. It helps business executives track sales momentum across Indian quarters.</p>
                 </div>
             </div>
 
-            <!-- Workspace Grid (Visual Chart + SQL Console) -->
+            <!-- Workspace Grid (Dark Navy Product Surface Chrome) -->
             <div class="workspace-grid">
-                <!-- SQL Console Panel -->
-                <div class="panel-card">
-                    <div class="panel-header">
-                        <h3><i class="fa-solid fa-terminal"></i> SQL Query Console</h3>
-                        <button id="run-btn" class="btn-primary">
+                <!-- Query Editor Card -->
+                <div class="dark-card">
+                    <div class="dark-card-header">
+                        <div class="dark-title-group">
+                            <h3>SQL Query Console</h3>
+                        </div>
+                        <button id="run-btn" class="run-btn">
                             <i class="fa-solid fa-play"></i> Run Query
                         </button>
                     </div>
-                    <div class="editor-box">
+
+                    <div class="code-window-inner">
                         <textarea id="sql-editor" spellcheck="false"></textarea>
                     </div>
-                    <div class="editor-footer">
-                        <span id="query-technique" class="badge-tech">Technique: CTE + Window Function LAG()</span>
-                        <span id="exec-time"><i class="fa-solid fa-bolt"></i> Exec Time: 0.9ms</span>
+
+                    <div class="query-info-bar">
+                        <span id="query-technique" class="tag-dark">Technique: CTE + Window LAG()</span>
+                        <span id="exec-time" class="exec-time"><i class="fa-solid fa-bolt"></i> Exec Time: 0.9ms</span>
                     </div>
                 </div>
 
-                <!-- Visual Chart Panel -->
-                <div class="panel-card">
-                    <div class="panel-header">
-                        <h3><i class="fa-solid fa-chart-column"></i> Data Visualization</h3>
+                <!-- Visualization Panel Card -->
+                <div class="dark-card">
+                    <div class="dark-card-header">
+                        <div class="dark-title-group">
+                            <h3>Visual Analytics</h3>
+                        </div>
                     </div>
                     <div class="chart-container">
                         <canvas id="analyticsChart"></canvas>
@@ -164,13 +166,15 @@
                 </div>
             </div>
 
-            <!-- Results Data Table -->
-            <div class="table-panel">
-                <div class="panel-header">
-                    <h3><i class="fa-solid fa-table"></i> Query Execution Data Results</h3>
-                    <span id="row-count-badge" class="row-badge">0 rows returned</span>
+            <!-- Query Execution Results Table (Dark Navy Product Chrome) -->
+            <div class="results-card">
+                <div class="dark-card-header">
+                    <div class="dark-title-group">
+                        <h3>Query Execution Results</h3>
+                    </div>
+                    <span id="row-count-badge" class="row-count">0 rows returned</span>
                 </div>
-                <div class="table-wrapper">
+                <div class="table-responsive">
                     <table id="results-table">
                         <thead>
                             <tr id="table-head"></tr>
