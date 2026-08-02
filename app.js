@@ -6,7 +6,7 @@ let currentChart = null;
 const PRESET_QUERIES = {
     1: {
         title: "Report 1: Executive Revenue & Month-over-Month Growth (INR)",
-        desc: "This query calculates total monthly revenue and Month-over-Month (MoM) growth percentage using the SQL LAG() window function. It helps business executives track sales momentum and seasonal spikes across Indian market quarters.",
+        desc: "This query calculates total monthly revenue and Month-over-Month (MoM) growth percentage using the SQL LAG() window function. It helps business executives track sales momentum across Indian quarters.",
         technique: "Technique: CTE + Window Function LAG()",
         sql: `WITH MonthlyMetrics AS (
     SELECT
@@ -236,6 +236,31 @@ async function initDatabase() {
     }
 }
 
+// Theme Toggle Switch Handling
+function initThemeToggle() {
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (!themeBtn) return;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>Light Mode</span>';
+    }
+
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>Dark Mode</span>';
+        } else {
+            document.body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>Light Mode</span>';
+        }
+    });
+}
+
 // Load Preset Query into Dashboard
 function loadQuery(queryId) {
     const queryObj = PRESET_QUERIES[queryId];
@@ -364,6 +389,7 @@ function renderChart(columns, values, queryMeta) {
 // Global Event Handlers
 document.addEventListener('DOMContentLoaded', () => {
     initDatabase();
+    initThemeToggle();
 
     document.querySelectorAll('.nav-item').forEach(item => {
         item.addEventListener('click', () => {
